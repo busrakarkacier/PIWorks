@@ -1,0 +1,7 @@
+select T.UserName, T.Email from ( select top 1 UL.UserID, Count(UL.UserID),U.username as UserName, U.emailaddress as Email
+                                    from i_user_login_logs (nolock) UL
+                                    inner join i_users (nolock) U on U.userID = UL.userID
+                                    where U.username <> 'Administrator'
+                                    group by UL.userID, U.username, U.emailaddress
+                                    order by Count(UL.UserID) desc ) T
+						
