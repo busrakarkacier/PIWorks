@@ -1,0 +1,11 @@
+    class NumberOperations
+    {
+        public void SwapNumbers(int a, int b)
+        {
+            a = a + b;
+            b = a - b;
+            a = a - b;
+            Console.WriteLine("The value of the 1st variable: " + a);
+            Console.WriteLine("The value of the 2nd variable: " + b);
+        }
+    }
