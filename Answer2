@@ -1,0 +1,4 @@
+select count(*) from (  select UL.UserID, Count(UL.UserID) 
+                        from i_user_login_logs (nolock) UL 
+                        group by UL.userID 
+                        having count(UL.UserID) > 3 )
